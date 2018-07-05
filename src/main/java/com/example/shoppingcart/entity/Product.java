@@ -40,17 +40,17 @@ public class Product implements Serializable {
     @Column(name = "Create_Date", nullable = false)
     private Date createDate;
     
-    @ManyToOne(targetEntity = SubCategory.class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = SubCategory.class)
     @JoinColumn(name = "SUB_CATEGORY_ID", nullable = false, //
             foreignKey = @ForeignKey(name = "FK_SUB_CATERGORY_ID"))
 	private SubCategory subCategory;
     
-    @ManyToOne(targetEntity = Color.class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Color.class)
     @JoinColumn(name = "COLOR_ID", nullable = false, //
             foreignKey = @ForeignKey(name = "FK_COLOR_ID"))
 	private Color color;
     
-    @ManyToOne(targetEntity = Size.class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Size.class)
     @JoinColumn(name = "SIZE_ID", nullable = false, //
             foreignKey = @ForeignKey(name = "FK_SIZE_ID"))
 	private Size size;
